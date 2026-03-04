@@ -1,0 +1,14 @@
+name: Day 40 Task
+on:
+  push: 
+
+jobs:
+
+  greet:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        run: actions/checkout
+
+      - name: Print statement
+        run: echo "Hello form GitHub Action"
