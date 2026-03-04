@@ -2,7 +2,8 @@
 name: CICD
 
 #workflow dispatch means manual click delivery whenever user required
-on: workflow_dispatch
+on:
+  workflow_dispatch:
 
 jobs:
 
