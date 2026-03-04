@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: checkout
-        run: actions/checkout
+        uses: actions/checkout
 
       - name: Print statement
         run: echo "Hello form GitHub Action"
