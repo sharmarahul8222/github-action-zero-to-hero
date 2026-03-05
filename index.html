@@ -1,137 +1,175 @@
-import React from "react";
-import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { Mail, Github, Linkedin, ArrowRight } from "lucide-react";
-
-export default function Portfolio() {
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-white overflow-x-hidden">
-      {/* Background Glow Effects */}
-      <div className="absolute top-0 left-0 w-96 h-96 bg-purple-600/30 rounded-full blur-3xl -z-10 animate-pulse" />
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-cyan-500/30 rounded-full blur-3xl -z-10 animate-pulse" />
-
-      {/* Navbar */}
-      <nav className="fixed w-full backdrop-blur-xl bg-white/5 border-b border-white/10 z-50">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-          <h1 className="text-xl font-semibold tracking-wide">YourName</h1>
-          <div className="flex gap-6 text-sm">
-            <a href="#about" className="hover:text-cyan-400 transition-colors">About</a>
-            <a href="#projects" className="hover:text-cyan-400 transition-colors">Projects</a>
-            <a href="#contact" className="hover:text-cyan-400 transition-colors">Contact</a>
-          </div>
-        </div>
-      </nav>
-
-      {/* Hero Section */}
-      <section className="flex flex-col items-center justify-center text-center min-h-screen px-6">
-        <motion.h2
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-5xl md:text-7xl font-bold leading-tight"
-        >
-          Crafting Beautiful <span className="bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">Digital Experiences</span>
-        </motion.h2>
-
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.2 }}
-          className="mt-6 max-w-2xl text-lg text-slate-300"
-        >
-          I design and develop modern, responsive, and high-performing web applications with a focus on stunning UI and smooth user experience.
-        </motion.p>
-
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.6 }}
-          className="mt-10"
-        >
-          <Button className="group rounded-2xl px-8 py-6 text-base bg-white/10 backdrop-blur-xl border border-white/20 hover:bg-white/20 transition-all duration-300">
-            View My Work
-            <ArrowRight className="ml-2 group-hover:translate-x-2 transition-transform" size={18} />
-          </Button>
-        </motion.div>
-      </section>
-
-      {/* About Section */}
-      <section id="about" className="py-24 px-6 max-w-6xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-        >
-          <Card className="bg-white/5 border border-white/10 backdrop-blur-xl rounded-3xl shadow-2xl">
-            <CardContent className="p-10">
-              <h3 className="text-3xl font-semibold mb-6">About Me</h3>
-              <p className="text-slate-300 leading-relaxed text-lg">
-                I'm a passionate UI/UX-focused developer specializing in building elegant, high-performance websites and applications. I love blending creativity with code to create immersive digital products that stand out.
-              </p>
-            </CardContent>
-          </Card>
-        </motion.div>
-      </section>
-
-      {/* Projects Section */}
-      <section id="projects" className="py-24 px-6 bg-white/5">
-        <div className="max-w-7xl mx-auto">
-          <h3 className="text-3xl font-semibold mb-16 text-center">Featured Projects</h3>
-          <div className="grid md:grid-cols-3 gap-10">
-            {[1, 2, 3].map((project) => (
-              <motion.div
-                key={project}
-                whileHover={{ scale: 1.05 }}
-                transition={{ type: "spring", stiffness: 200 }}
-              >
-                <Card className="group bg-white/5 border border-white/10 backdrop-blur-xl rounded-3xl overflow-hidden">
-                  <CardContent className="p-8">
-                    <div className="h-40 bg-gradient-to-br from-purple-500/40 to-cyan-500/40 rounded-2xl mb-6" />
-                    <h4 className="text-xl font-semibold mb-3">Project Title</h4>
-                    <p className="text-slate-400 text-sm">
-                      A beautifully designed and highly interactive web experience focused on performance and accessibility.
-                    </p>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Contact Section */}
-      <section id="contact" className="py-24 px-6 max-w-4xl mx-auto text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-        >
-          <h3 className="text-3xl font-semibold mb-6">Let's Work Together</h3>
-          <p className="text-slate-400 mb-10">
-            Have a project in mind? I'd love to collaborate and bring your vision to life.
-          </p>
-
-          <div className="flex justify-center gap-6">
-            <Button variant="outline" className="rounded-2xl border-white/20 hover:bg-white/10">
-              <Mail className="mr-2" size={18} /> Email
-            </Button>
-            <Button variant="outline" className="rounded-2xl border-white/20 hover:bg-white/10">
-              <Github className="mr-2" size={18} /> GitHub
-            </Button>
-            <Button variant="outline" className="rounded-2xl border-white/20 hover:bg-white/10">
-              <Linkedin className="mr-2" size={18} /> LinkedIn
-            </Button>
-          </div>
-        </motion.div>
-      </section>
-
-      {/* Footer */}
-      <footer className="py-10 text-center text-slate-500 text-sm border-t border-white/10 bg-white/5">
-        © {new Date().getFullYear()} YourName. Designed & Built with passion.
-      </footer>
-    </div>
-  );
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rahul Sharma | Cloud Engineer & DevRel</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+body{
+  background:linear-gradient(135deg,#0f172a,#020617);
+  color:#fff;
+  overflow-x:hidden;
 }
+
+/* Background Glow */
+body::before, body::after{
+  content:"";
+  position:fixed;
+  width:400px;height:400px;
+  border-radius:50%;
+  filter:blur(120px);
+  z-index:-1;
+}
+body::before{background:#06b6d4;top:-100px;left:-100px;opacity:.3}
+body::after{background:#a855f7;bottom:-100px;right:-100px;opacity:.3}
+
+nav{
+  position:sticky;top:0;
+  backdrop-filter:blur(15px);
+  background:rgba(255,255,255,0.05);
+  border-bottom:1px solid rgba(255,255,255,0.1);
+  padding:20px 10%;
+  display:flex;justify-content:space-between;align-items:center;
+}
+nav a{color:#ccc;text-decoration:none;margin-left:30px;transition:.3s}
+nav a:hover{color:#06b6d4}
+
+section{padding:100px 10%}
+
+.hero{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.hero h1{font-size:52px;font-weight:800;line-height:1.2}
+.hero span{color:#06b6d4}
+.hero p{margin-top:20px;color:#cbd5e1;font-size:18px}
+
+.btn{
+  display:inline-block;
+  margin-top:30px;
+  padding:12px 28px;
+  border-radius:30px;
+  background:linear-gradient(90deg,#06b6d4,#a855f7);
+  color:#fff;
+  text-decoration:none;
+  font-weight:600;
+  transition:.3s;
+}
+.btn:hover{transform:translateY(-3px);box-shadow:0 10px 25px rgba(0,0,0,.4)}
+
+.card{
+  background:rgba(255,255,255,0.05);
+  backdrop-filter:blur(15px);
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:20px;
+  padding:30px;
+  transition:.4s;
+}
+.card:hover{
+  transform:translateY(-10px);
+  box-shadow:0 20px 40px rgba(0,0,0,.5);
+}
+
+.grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:30px}
+.grid-2{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px}
+
+h2{font-size:36px;margin-bottom:40px}
+
+footer{
+  text-align:center;
+  padding:40px;
+  border-top:1px solid rgba(255,255,255,0.1);
+  color:#94a3b8;
+}
+
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr}
+  .hero h1{font-size:38px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <h3>Rahul Sharma</h3>
+  <div>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#blog">Writing</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div>
+    <h1>Cloud Engineer & <span>DevRel Professional</span></h1>
+    <p>Microsoft Certified Azure Developer with experience migrating 100+ enterprise applications to Azure. Skilled in Kubernetes, DevOps automation, CI/CD pipelines, and open-source community building.</p>
+    <a href="#contact" class="btn">Let’s Connect</a>
+  </div>
+  <div class="card">
+    <h3>Core Expertise</h3>
+    <ul style="margin-top:20px;color:#cbd5e1;line-height:1.8">
+      <li>Azure Cloud (AZ-204)</li>
+      <li>Kubernetes & Cloud-Native</li>
+      <li>CI/CD & DevOps</li>
+      <li>Azure Data Factory & ETL</li>
+      <li>Technical Writing (LWKD)</li>
+    </ul>
+  </div>
+</section>
+
+<section id="about">
+  <h2>About Me</h2>
+  <div class="card">
+    <p style="color:#cbd5e1;line-height:1.8;font-size:18px">
+      I specialize in cloud migration, performance optimization, and building scalable DevOps pipelines. I have successfully improved enterprise application performance by 40–45% and enhanced ETL processes by 70% using Azure technologies. Beyond engineering, I contribute weekly to the Kubernetes LWKD newsletter and actively participate in open-source initiatives.
+    </p>
+  </div>
+</section>
+
+<section id="projects">
+  <h2>Highlighted Work</h2>
+  <div class="grid-3">
+    <div class="card">
+      <h3>Azure Migration (100+ Apps)</h3>
+      <p style="margin-top:15px;color:#cbd5e1">Led large-scale on-prem to Azure migrations improving scalability and availability.</p>
+    </div>
+    <div class="card">
+      <h3>Kubernetes LWKD</h3>
+      <p style="margin-top:15px;color:#cbd5e1">Contribute weekly technical updates covering Kubernetes releases and ecosystem changes.</p>
+    </div>
+    <div class="card">
+      <h3>Hacktoberfest Level 4</h3>
+      <p style="margin-top:15px;color:#cbd5e1">Contributed to Meshery and cloud-native projects with impactful pull requests.</p>
+    </div>
+  </div>
+</section>
+
+<section id="blog">
+  <h2>Writing & Community</h2>
+  <div class="grid-2">
+    <div class="card">
+      <h3>Hashnode Blog</h3>
+      <p style="margin-top:15px;color:#cbd5e1">Write about Azure migration strategies, DevOps pipelines, and cloud-native architecture.</p>
+      <a href="https://migrationapproaches.hashnode.dev/on-prem-to-cloud-migration-approaches" target="_blank" class="btn" style="margin-top:20px;display:inline-block">Read Article</a>
+    </div>
+    <div class="card">
+      <h3>Kubernetes LWKD Newsletter</h3>
+      <p style="margin-top:15px;color:#cbd5e1">Weekly contributor sharing updates on Kubernetes development and community progress.</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <div class="card" style="text-align:center">
+    <p style="color:#cbd5e1;font-size:18px">Let’s collaborate on cloud-native solutions, DevRel initiatives, or open-source projects.</p>
+    <p style="margin-top:20px;color:#06b6d4;font-weight:600">Email: your-email@example.com</p>
+  </div>
+</section>
+
+<footer>
+  © 2026 Rahul Sharma | Built with passion for Cloud & Community
+</footer>
+
+</body>
+</html>
