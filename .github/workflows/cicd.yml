@@ -4,6 +4,16 @@ name: CICD
 #workflow dispatch means manual click delivery whenever user required
 on:
   workflow_dispatch:
+    inputs:
+      environments:
+        description: This is the environment where this workflow runs
+        default: 'dev'
+        required: true
+        type: choice
+        options:
+          - dev
+          - prod
+          - staging
 
 jobs:
 
