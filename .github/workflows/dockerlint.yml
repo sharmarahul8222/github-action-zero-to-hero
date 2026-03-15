@@ -10,7 +10,7 @@ jobs:
 
         steps:
             - name: Code Checkout
-              uses: acions/checkout@v4
+              uses: actions/checkout@v4
 
             - name: Validate Docker file
               uses: hadolint/hadolint-action@v3.1.0
