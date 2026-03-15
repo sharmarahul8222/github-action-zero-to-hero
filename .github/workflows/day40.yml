@@ -1,6 +1,7 @@
 name: Day 40 Task
 on:
-  push: 
+  # push: 
+    workflow_dispatch:
 
 jobs:
 
